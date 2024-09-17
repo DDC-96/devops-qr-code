@@ -17,4 +17,5 @@ jobs:
               run: |
                  docker login -u dcruzdevops -p ${{ secrets.DOCKER_HUB }}
                  docker push dcruzdevops/cloud-qr-code-api:latest
+                 docker push dcruzdevops/cloud-qr-code-api-frontend:latest
  
