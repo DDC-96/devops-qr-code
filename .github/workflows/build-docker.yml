@@ -11,6 +11,7 @@ jobs:
               uses: actions/checkout@v4
             - name: build image
               run: |
+<<<<<<< HEAD
                 docker build ./front-end-nextjs/ -t dcruzdevops/cloud-qr-code-api-frontend:latest
                 docker build ./api/ -t dcruzdevops/cloud-qr-code-api:latest
 
@@ -20,3 +21,13 @@ jobs:
                 docker push dcruzdevops/cloud-qr-code-api:latest
                 docker push dcruzdevops/cloud-qr-code-frontend:latest
  
+=======
+                  docker build ./front-end-nextjs/ -t dcruzdevops/cloud-qr-code-api-frontend:latest
+                  docker build ./api/ -t dcruzdevops/cloud-qr-code-api:latest
+            - name: push image to docker hub
+              run: |
+                 docker login -u dcruzdevops -p ${{ secrets.DOCKER_HUB }}
+                 docker push dcruzdevops/cloud-qr-code-api:latest
+                 docker push dcruzdevops/cloud-qr-code-api-frontend:latest
+ 
+>>>>>>> 6155f3c8d6e1f234b82ea7693e84bb82b2bf82d8
